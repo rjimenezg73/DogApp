@@ -1,13 +1,105 @@
-body {
+/* ============================================================
+RESET STYLE
+============================================================ */
+/* Box sizing rules + margin 0 + padding 0 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+
+
+
+/* ==================================================================
+  PERSONAL STYLE
+================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=PT+Sans:wght@400;700&display=swap');
+
+:root {
+  --clr-orange: #F9B04B;
+  --clr-light-brown: #A78357;
+  --clr-dark-brown: #402E32;
+  --clr-grey: #B7A99A;
+  --clr-cream: #FFECCC;
+  --clr-white: #FFF8EE;
+  --ff-nunito: 'Nunito', sans-serif;
+  --ff-ptsans: 'PT Sans', sans-serif;
+  --bg-image: url(./assets/huellas-huesos.jpg);
+  --bg-image-opacity: .3;
+
+  position: relative;
+  isolation: isolate;
+}
+:root::after {
+  background-image: var(--bg-image);
+  opacity: var(--bg-image-opacity);
+  background-size: 200px;
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+body {
+  color: var(--clr-dark-brown);
+  font-family: var(--ff-ptsans);
+  text-align: center;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track { /* track */
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb { /* Handle */
+  background: var(--clr-grey); 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { /* Handle on hover */
+  background: var(--clr-light-brown);
 }

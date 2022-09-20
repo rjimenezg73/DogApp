@@ -1,0 +1,38 @@
+.card {
+  /* flex-grow: 0.1; */
+  text-decoration: none;
+  color: inherit;
+  border-radius: 20px;
+  background-color: white;
+  width: 270px;
+  margin: .75rem;
+  box-shadow: var(--clr-grey) 0px 0px 5px;
+  transition: 0.2s ease;
+}
+.card:hover {
+  box-shadow: var(--clr-grey) 0px 0px 10px 1px;
+}
+
+.dog-img {
+  height: 210px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.25rem .75rem;
+}
+.card-title {
+  /* font-weight: 700; */
+  font-size: 1.25rem;
+  font-family: var(--ff-nunito);
+}
+.card-weight {
+  color: var(--clr-orange);
+  font-family: var(--ff-nunito);
+}
+.card-temperaments {
+  color: var(--clr-light-brown);
+}

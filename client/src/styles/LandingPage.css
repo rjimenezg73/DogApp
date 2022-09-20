@@ -1,0 +1,46 @@
+.landing-page {
+  height: 100vh;
+  /* background-color: #A340A3; */
+  background-color: var(--clr-cream);
+  background-image: url(../assets/dog.png);
+  background-size: 450px;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+.landing-page a {
+  text-decoration: none;
+}
+
+.from-landing-to-home-btn{
+  position: relative;
+  top: 80vh;
+  background-color: hsl(31.2, 18.2%, 26.9%, 0.8);
+  color: var(--clr-orange);
+  font-family: var(--ff-nunito);
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border-radius: 15px;
+  border: none;
+  padding: .75rem 1.5rem;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+}
+.from-landing-to-home-btn:hover{
+  background-color: var(--clr-dark-brown);
+}
+
+.hueso {
+  margin-left: .75rem;
+}
+
+/* @media (min-width:540px){
+  .landing-page {
+    height: 100vh;
+    background-image: url('../assets/6.jpg');
+  }
+} */
