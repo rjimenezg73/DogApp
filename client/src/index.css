@@ -29,9 +29,9 @@ body {
 }
 
 /* A elements that don't have a class get default styles */
-a:not([class]) {
+/* a:not([class]) {
   text-decoration-skip-ink: auto;
-}
+} */
 
 /* Make images easier to work with */
 img,
@@ -65,8 +65,6 @@ select {
   --clr-grey: #B7A99A;
   --clr-cream: #FFECCC;
   --clr-white: #FFF8EE;
-  --ff-nunito: 'Nunito', sans-serif;
-  --ff-ptsans: 'PT Sans', sans-serif;
   --bg-image: url(./assets/huellas-huesos.jpg);
   --bg-image-opacity: .3;
 
@@ -85,7 +83,7 @@ select {
 
 body {
   color: var(--clr-dark-brown);
-  font-family: var(--ff-ptsans);
+  font-family: sans-serif;
   text-align: center;
 }
 

@@ -11,3 +11,15 @@ export function getDogs () {
     })
   }
 }
+
+export function getTemperaments () {
+  return async function (dispatch){
+    return await axios.get('http://localhost:3001/temperaments')
+    .then(res => {
+      dispatch({
+        type: 'GET_TEMPERAMENTS',
+        payload: res.data
+      })
+    })
+  }
+}

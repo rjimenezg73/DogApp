@@ -1,38 +1,53 @@
-.card {
-  /* flex-grow: 0.1; */
-  text-decoration: none;
-  color: inherit;
+.container{
+  background: aqua;
+  width: 90%; 
+  /*height: 1300px;*/  
+  margin: 0 auto;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  align-items: center;
+  
+} 
+
+.card-container {
   border-radius: 20px;
-  background-color: white;
-  width: 270px;
-  margin: .75rem;
+  background: rgb(253, 250, 250);
+  width: 250px;
+  height: 500px;
   box-shadow: var(--clr-grey) 0px 0px 5px;
-  transition: 0.2s ease;
 }
-.card:hover {
-  box-shadow: var(--clr-grey) 0px 0px 10px 1px;
+.card-container:hover {
+  background: var(--clr-light-brown);
+  color: white;
 }
 
-.dog-img {
-  height: 210px;
+.img-dog {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  width: 100%;
-  object-fit: cover;
+  width: 250px;
+  height: 250px;
+  /* object-fit: cover; */
 }
 
-.card-body {
-  padding: 1.25rem .75rem;
+.info-dog {
+  padding: 5px;
 }
-.card-title {
+
+.title-dog {
   /* font-weight: 700; */
-  font-size: 1.25rem;
-  font-family: var(--ff-nunito);
+  font-size: 1.2rem;
+  color: var(--clr-dark-brown);
+  font-family: sans-serif;
 }
-.card-weight {
+
+.weight-dog {
   color: var(--clr-orange);
-  font-family: var(--ff-nunito);
+  font-family: sans-serif;
 }
-.card-temperaments {
-  color: var(--clr-light-brown);
+
+.temperaments-dog {
+  margin-top: 7px;
+  color: var(--clr-dark-brown);
+  font-family: sans-serif;
 }
