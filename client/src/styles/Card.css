@@ -3,10 +3,12 @@
   width: 90%; 
   /*height: 1300px;*/  
   margin: 0 auto;
-  display:flex;
-  flex-direction: row;
-  flex-wrap: wrap; 
+  display: grid;
+  grid-template-rows:repeat(3, 1fr);
   align-items: center;
+  /* flex-direction: row;
+  flex-wrap: wrap; 
+  align-items: center; */
   
 } 
 

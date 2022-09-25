@@ -6,6 +6,7 @@ import { getDogs, getTemperaments } from "../actions/actions";
 import Card from "./Card.jsx";
 import '../styles/Home.css';
 import NavBar from "./NavBar";
+import SelectorButtons from "./SelectorButtons";
 
 const Home = () => {
 
@@ -29,24 +30,7 @@ const Home = () => {
   return(
     <div>
       <NavBar />
-      <h1>Home App</h1>
-      <button onClick={e => {handleClick(e)}}>
-        Volver a cargar todos los Dogs
-      </button> 
-      <div>
-        <select>
-          <option value= 'asc' >Ascendente</option>
-          <option value = 'desc' >Descendente</option>
-        </select>
-        <select>
-          <option value = 'all'>Todos</option>
-          <option value = 'raza'>Raza</option>
-          <option value = 'peso'>Peso</option>
-          <option value = 'altura'>Altura</option>
-          <option value = 'tempera'>Temperamento</option>
-          <option value = 'anios'>Años de vida</option>
-        </select>
-      </div>
+      <SelectorButtons />
 
       {
         allDogs?.map((element) => {
