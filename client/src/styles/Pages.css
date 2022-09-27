@@ -1,0 +1,47 @@
+.pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block: 2rem 6rem;
+}
+
+.pageNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  width: 42px;
+  height: 42px;
+  background-color: var(--clr-cream);
+  color: var(--clr-light-brown);
+  border-radius: 25%;
+  margin: 1px;
+  user-select: none;
+  cursor: pointer;
+}
+.pageNumber:hover {
+  background-color: var(--clr-orange);
+  color: var(--clr-dark-brown);
+}
+
+.disabled {
+  background-color: var(--clr-white);
+  color: var(--clr-grey);
+}
+.disabled:hover {
+  background-color: var(--clr-white);
+  color: var(--clr-grey);
+  cursor: not-allowed;
+}
+
+.activePage{
+  background-color: var(--clr-orange);
+  color: var(--clr-dark-brown);
+}
+
+@media (min-width:500px) {
+  .pageNumber {
+    width: 45px;
+    height: 45px;
+  }
+}

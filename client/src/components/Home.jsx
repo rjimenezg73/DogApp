@@ -1,49 +1,101 @@
-import React, { Fragment, useRef } from "react";
+import React, { useRef } from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getDogs, getTemperaments } from "../actions/actions";
+import { getDogs, getTemperaments } from "../actions/actions.js";
+import Filters from "./Filters.jsx";
+import Sort from './Sort.jsx';
 import Card from "./Card.jsx";
+import Pages from "./Pages.jsx";
+import Nav from "./Nav.jsx";
+import Footer from "./Footer.jsx";
+import Loader from "./Loader.jsx";
 import '../styles/Home.css';
-import NavBar from "./NavBar";
-import SelectorButtons from "./SelectorButtons";
 
 const Home = () => {
-
   const dispatch = useDispatch();
+  const appTopRef = useRef()
+  const dogs = useSelector((state) => state.dogs);
+  const [order, setOrder] = useState(""); //este state sólo sirve para re-renderizar la pág cuando hacemos un sort
 
-
-  const allDogs = useSelector((state) => state.dogs); // Es lo mismo que hacer maps state props
-
-
-  useEffect(()=>{
-    dispatch(getDogs())
-    dispatch(getTemperaments())
-}, [])
- 
-  
-  function handleClick(e){
-    e.preventDefault();
-    dispatch(getDogs());
+  //paginado
+  const [actualPage, setActualPage] = useState(1); //arrancamos desde la page 1
+  const [dogsPerPage, setDogsPerPage] = useState(8); //cuantos dogs por page
+  const indexOfLastDog = actualPage * dogsPerPage;
+  const indexOfFirstDog = indexOfLastDog - dogsPerPage;
+  const actualDogs = dogs.slice(indexOfFirstDog, indexOfLastDog); //recortamos el arreglo con todos los dogs
+  const [minPageNumber, setMinPageNumber] = useState(0) //este estado y el q está abajo es para hacer el paginado más tikito y que quede lindo, uso ambos para hacer un slice y renderizar sólo ese pedazo
+  const [maxPageNumber, setMaxPageNumber] = useState(5)
+  const pages = (pageNumber) => {
+    setActualPage(pageNumber);
+    appTopRef.current?.scrollIntoView({ behavior: 'smooth' })
+    if(pageNumber >= maxPageNumber) {
+      setMinPageNumber(minPageNumber+4)
+      setMaxPageNumber(maxPageNumber+4)
+    } else if(pageNumber <= minPageNumber+1 && pageNumber !== 1) {
+      setMinPageNumber(minPageNumber-4)
+      setMaxPageNumber(maxPageNumber-4)
+    }
   };
 
-  return(
-    <div>
-      <NavBar />
-      <SelectorButtons />
+  useEffect(() => {
+    !dogs.length && dispatch(getDogs())
+    dispatch(getTemperaments())
+  }, [dispatch, dogs]);
+  
+  const handleRefresh = () => {
+    dispatch(getDogs());
+  }
 
-      {
-        allDogs?.map((element) => {
-          return(
-            <Fragment>
-              <Link to = {"/home" + element.id}>
-                <Card id = {element.id} name = {element.name} image = {element.image} weight =  {element.weight} height = {element.height} life_span = {element.life_span} temperaments = {element.temperaments} key={element.id} />
-              </Link>
-            </Fragment>
-          );
-        })
-      }
+  return (
+    <div ref={appTopRef} className="App">
+      <Nav setMinPageNumber={setMinPageNumber} setMaxPageNumber={setMaxPageNumber} setActualPage={setActualPage} />
+      <div className="home-container">
+        <div className="sort-filter-container">
+          <div className="sort-filter">
+            {/* <Filters setMinPageNumber={setMinPageNumber} setMaxPageNumber={setMaxPageNumber} setActualPage={setActualPage} />
+            <Sort setMinPageNumber={setMinPageNumber} setMaxPageNumber={setMaxPageNumber} setActualPage={setActualPage} setOrder={setOrder} /> */}
+          </div>
+          <button className="home-refresh-btn" onClick={handleRefresh}>Refresh</button>
+        </div>
 
+        <div className="create-dog">
+          Create your original dog breed&nbsp;
+          <Link to="/dogs">here</Link>!
+        </div>
+
+        {/* dog cards */}
+        <div className="card-container">
+          {actualDogs.length && Array.isArray(actualDogs) ? (
+            actualDogs.map((dog) => {
+              return (
+                <Card
+                  id={dog.id}
+                  key={dog.id}
+                  name={dog.name}
+                  image={dog.image}
+                  weight={dog.weight}
+                  temperaments={dog.temperaments}
+                />
+              );
+            })
+          ) : (
+            !dogs.length 
+            ? <Loader /> 
+            : <div className="home-dog-not-found"><h3>Dog not found...</h3></div>
+          )}
+        </div>
+        
+        <Pages
+          actualPage={actualPage}
+          minPageNumber={minPageNumber}
+          maxPageNumber={maxPageNumber}
+          dogsPerPage={dogsPerPage}
+          dogs={Array.isArray(dogs) ? dogs.length : 1}
+          pages={pages}
+        />
+      </div>
+      <Footer />
     </div>
   );
 };

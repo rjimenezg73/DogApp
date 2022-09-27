@@ -1,0 +1,109 @@
+/* .swal2-confirm { color: var(--clr-dark-brown) !important; }
+.swal2-deny { color: white !important; }
+.swal2-title { font-family: var(--ff-nunito) !important; } */
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-container {
+  width: 100%;
+  max-width: 1280px;
+  text-align: center;
+}
+
+.sort-filter-container {
+  margin: 1rem 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-refresh-btn{
+  background-color: var(--clr-light-brown);
+  border: 1px solid var(--clr-light-brown);
+  border-radius: 20px;
+  border: none;
+  color: white;
+  padding: 0.25rem 1rem;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.home-refresh-btn:hover {
+  background-color: var(--clr-orange);
+  color: var(--clr-dark-brown);
+}
+
+.create-dog {
+  margin: 1rem;
+  font-size: 1.25rem;
+  font-family: var(--ff-nunito);
+  font-weight: 700;
+}
+.create-dog a {
+  font-weight: 900;
+  color: var(--clr-light-brown);
+  text-decoration: none;
+  filter: drop-shadow(0px 0px 2px var(--clr-white));
+  transition: 0.1s;
+}
+.create-dog a:hover {
+  color: var(--clr-orange);
+  text-decoration: underline;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-dog-not-found {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: inherit;
+  border-radius: 20px;
+  background-color: white;
+  width: 270px;
+  box-shadow: var(--clr-grey) 0px 0px 5px;
+  transition: 0.2s ease;
+  padding: 3rem 2rem;
+  gap: 2rem;
+}
+.home-dog-not-found h3 {
+  font-size: 1.25rem;
+  font-family: var(--ff-nunito);
+}
+
+@media (min-width: 600px) {
+  .create-dog {
+    letter-spacing: 0.01em;
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin: 1.5rem;
+  }
+  .card-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+  }
+}
+
+@media (min-width: 660px) {
+  .sort-filter-container {
+    margin-inline: .75rem;
+    margin: 1.5rem .75rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .sort-filter {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+  }
+}

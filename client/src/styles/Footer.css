@@ -1,0 +1,10 @@
+.footer-container {
+  /* margin-top: .25rem; */
+  margin-top: 15px;
+  background-color: var(--clr-light-brown);
+  color: white;
+  padding: 5px;
+  width: 100%;
+  bottom: 0; 
+  position: absolute;
+}
