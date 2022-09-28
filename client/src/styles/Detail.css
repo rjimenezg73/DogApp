@@ -1,0 +1,132 @@
+.detail {
+  padding-block: 1.5rem;
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-cream);
+  border-radius: 25px;
+  max-width: 950px;
+  text-align: left;
+  padding: 1.75rem 2rem;
+  margin: 0 1rem;
+}
+
+.detail-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-title {
+  display: inline-flex;
+  position: relative;
+  font-family: var(--ff-nunito);
+  color: var(--clr-dark-brown);
+  margin: 1rem 0;
+}
+.detail-title::after {
+  content: ' ';
+  position: absolute;
+  background-color: var(--clr-light-brown);
+  height: 2px;
+  width: 60%;
+  left: 0;
+  bottom: 4px;
+  border-radius: 25px;
+}
+
+.detail-img {
+  border-radius: 20px;
+  margin: .75rem 0;
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.detail-description {
+  color: var(--clr-light-brown);
+}
+
+.detail-category {
+  font-weight: 700;
+}
+
+.detail-dog-not-found-img {
+  align-self: center;
+  margin: .75rem 0;
+  width: 80%;
+  max-height: 300px;
+}
+.detail-dog-not-found-title{
+  font-family: var(--ff-nunito);
+  color: var(--clr-dark-brown);
+  margin: 1rem 0;
+}
+
+.detail-delete-edit-btn-container{
+  display: flex;
+  gap: .5rem;
+}
+
+.detail-delete-edit-btn {
+  margin-top: 1rem;
+  background-color: var(--clr-light-brown);
+  border: 1px solid var(--clr-light-brown);
+  border-radius: 20px;
+  border: none;
+  color: white;
+  padding: 0.25rem 1rem;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.detail-delete-btn {
+  background-color: var(--clr-orange);
+  color: var(--clr-dark-brown);
+}
+.detail-delete-btn:hover {
+  background-color: var(--clr-light-brown);
+  color: white;
+}
+
+@media (min-width:575px){
+  .detail-body {
+    flex-direction: row;
+  }
+  .detail-img {
+    order: 1;
+    max-height: 450px;
+    max-width: 65%;
+    margin: 0;
+  }
+  .detail-title-container {
+    order: 2;
+  }
+  .detail-description {
+    order: 3;
+    margin-left: 2rem;
+  }
+  .detail-dog-not-found-img {
+    max-width: 60%;
+    margin: 0;
+  }  
+  .detail-dog-not-found-title{
+    margin: 1rem 0 1rem 2rem;
+  }  
+}
+
+@media(min-width:850px) {
+  .detail-title-container {
+    margin-bottom: 1rem;
+  }
+  .detail-aboutme {
+    margin-bottom: .5rem;
+  }
+}
+
+@media(min-width:970px) {
+  .detail-container {
+    margin-inline: auto;
+  }
+}

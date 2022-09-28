@@ -59,6 +59,8 @@ router.post('/', async (req, res) => {
     console.log('Algo no se concretó con post/dogs:', e);
   }
 })
+
+
 router.delete('/:id', async (req, res) => {
   const id = req.params.id 
   try {

@@ -53,10 +53,13 @@ const Home = () => {
       <div className="home-container">
         <div className="sort-filter-container">
           <div className="sort-filter">
-            {/* <Filters setMinPageNumber={setMinPageNumber} setMaxPageNumber={setMaxPageNumber} setActualPage={setActualPage} />
-            <Sort setMinPageNumber={setMinPageNumber} setMaxPageNumber={setMaxPageNumber} setActualPage={setActualPage} setOrder={setOrder} /> */}
+           
+            <Sort setMinPageNumber={setMinPageNumber} setMaxPageNumber={setMaxPageNumber} setActualPage={setActualPage} setOrder={setOrder} /> 
+
+            <Filters setMinPageNumber={setMinPageNumber} setMaxPageNumber={setMaxPageNumber} setActualPage={setActualPage} />
+
           </div>
-          <button className="home-refresh-btn" onClick={handleRefresh}>Refresh</button>
+          <button className="home-refresh-btn" onClick={handleRefresh}>Actualizar</button>
         </div>
 
         <div className="create-dog">

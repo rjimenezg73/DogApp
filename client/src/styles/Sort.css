@@ -1,0 +1,11 @@
+.sort-container select {
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid var(--clr-light-brown);
+  padding: 0.25rem 0.5rem;
+  margin: 2px 0;
+}
+
+.sort-title {
+  font-weight: 700;
+}
