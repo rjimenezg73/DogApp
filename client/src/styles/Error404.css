@@ -1,0 +1,37 @@
+.error404-container {
+  padding-top: 1.5rem;
+}
+
+.error404-body{
+  max-width: 600px;
+  padding: 1.75rem 2rem;
+  margin: 0 1rem;
+  background-color: var(--clr-cream);
+  border-radius: 25px;
+}
+
+.error404-img{
+  margin: 1.5rem 0;
+  border-radius: 15px;
+}
+
+.error404-btn{
+  background-color: var(--clr-orange);
+  border: 1px solid var(--clr-orange);
+  border-radius: 20px;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  transition: 0.1s;
+  font-size: 18px;
+}
+.error404-btn:hover {
+  background-color: var(--clr-light-brown);
+  border: 1px solid var(--clr-light-brown);
+  color: white;
+}
+
+@media (min-width: 620px) {
+  .error404-body {
+    margin-inline: auto;
+  }
+}

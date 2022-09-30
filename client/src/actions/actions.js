@@ -24,13 +24,13 @@ export function getTemperaments () {
   }
 }
 
-export function filterDogByStatus(payload){
-  console.log(payload);
-  return{
-    type: 'FILTER_BY_STATUS',
-    payload
-  }
-}
+// export function filterDogByStatus(payload){
+//   console.log(payload);
+//   return{
+//     type: 'FILTER_BY_STATUS',
+//     payload
+//   }
+// }
 
 export function sortByName (payload) {
   return{
