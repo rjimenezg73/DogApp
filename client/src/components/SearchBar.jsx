@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getByName } from "../actions/actions.js";
 import "../styles/SearchBar.css";
-// import Swal from 'sweetalert2'
-// import withReactContent from 'sweetalert2-react-content'
 
-// const MySwal = withReactContent(Swal)
 
 const SearchBar = ({ setMinPageNumber, setMaxPageNumber, setActualPage }) => {
   const dispatch = useDispatch();
