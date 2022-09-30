@@ -3,7 +3,7 @@ import '../styles/Loader.css';
 
 const Loader = () => {
   return (
-    <div class="cssload-wave">
+    <div className="cssload-wave">
       <span></span>
       <span></span>
       <span></span>
